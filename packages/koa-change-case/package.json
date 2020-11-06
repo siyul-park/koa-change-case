@@ -1,7 +1,7 @@
 {
   "name": "koa-change-case",
   "version": "0.0.0",
-  "description": "",
+  "description": "Extensible Koa middleware for converting objects in context",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,8 +13,9 @@
     "lint:fix": "eslint --fix .",
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Si-Yual Park",
+  "license": "MIT",
+  "homepage": "https://github.com/siyual-park/koa-change-case",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "@types/koa": "^2.11.6",
