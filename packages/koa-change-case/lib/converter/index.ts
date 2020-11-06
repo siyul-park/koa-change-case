@@ -1,4 +1,4 @@
-export { default as Converter } from "./converter";
-export { default as CaseConverterFactory } from "./case-converter-factory";
-export { default as defaultCaseConverterFactory } from "./default-case-converter-factory";
+export { default as MiddlewareFactory } from "./middleware-factory";
+export { default as defaultMiddlewareFactoryProvider } from "./default-converter-manager-factory";
+export { default as toMiddlewareFactory } from "./to-middleware-factory";
 export * from "./converters";

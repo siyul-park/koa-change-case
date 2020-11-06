@@ -11,16 +11,39 @@ import {
   sentenceCase as toSentenceCase,
   snakeCase as toSnakeCase,
 } from "change-case";
-import defaultCaseConverterFactory from "./default-case-converter-factory";
+import defaultConverterManagerFactory from "./default-converter-manager-factory";
+import toMiddlewareFactory from "./to-middleware-factory";
 
-export const camelCase = defaultCaseConverterFactory(toCamelCase);
-export const capitalCase = defaultCaseConverterFactory(toCapitalCase);
-export const constantCase = defaultCaseConverterFactory(toConstantCase);
-export const dotCase = defaultCaseConverterFactory(toDotCase);
-export const headerCase = defaultCaseConverterFactory(toHeaderCase);
-export const noCase = defaultCaseConverterFactory(toNoCase);
-export const paramCase = defaultCaseConverterFactory(toParamCase);
-export const pascalCase = defaultCaseConverterFactory(toPascalCase);
-export const pathCase = defaultCaseConverterFactory(toPathCase);
-export const sentenceCase = defaultCaseConverterFactory(toSentenceCase);
-export const snakeCase = defaultCaseConverterFactory(toSnakeCase);
+export const camelCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toCamelCase)
+);
+export const capitalCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toCapitalCase)
+);
+export const constantCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toConstantCase)
+);
+export const dotCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toDotCase)
+);
+export const headerCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toHeaderCase)
+);
+export const noCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toNoCase)
+);
+export const paramCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toParamCase)
+);
+export const pascalCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toPascalCase)
+);
+export const pathCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toPathCase)
+);
+export const sentenceCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toSentenceCase)
+);
+export const snakeCase = toMiddlewareFactory(
+  defaultConverterManagerFactory(toSnakeCase)
+);
