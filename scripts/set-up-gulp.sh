@@ -13,16 +13,21 @@ fi
 rootPath=$1
 packagePath=$2
 
-templatePath="${rootPath}/templates/default"
-
 cd "${packagePath}" || exit
 
 echo "🚀️ Set up gulp"
 
+# gulp 다운로드
+echo "⚙️ Install gulp"
+
+npm i gulp gulp-typescript --save-dev
+
+echo "✅ Finish"
+
 # gulpfile 복사
 echo "⚙️ Copy gulpfile"
 
-ln "${templatePath}/gulpfile.js" "${packagePath}"
+cp "${rootPath}/gulpfile.js" "${packagePath}"
 
 echo "✅ Finish"
 
