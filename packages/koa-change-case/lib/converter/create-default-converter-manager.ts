@@ -1,14 +1,14 @@
-import { ConvertManager } from "convable";
 import {
   ArrayConvertProcessor,
   DefaultConvertProcessor,
   ObjectConvertProcessor,
 } from "../convert-processor";
+import ConvertManager from "./convert-manager";
 
-function defaultConverterManagerFactory(
+function createDefaultConverterManager(
   changeCase: (name: string) => string
 ): ConvertManager {
-  const converter = new ConvertManager();
+  const converter = new ConvertManager(changeCase);
   converter
     .register(new DefaultConvertProcessor())
     .register(new ObjectConvertProcessor(changeCase))
@@ -17,4 +17,4 @@ function defaultConverterManagerFactory(
   return converter;
 }
 
-export default defaultConverterManagerFactory;
+export default createDefaultConverterManager;
