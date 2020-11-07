@@ -5,7 +5,7 @@ import {
   ObjectConvertProcessor,
 } from "../convert-processor";
 
-function defaultConverterManagerFactory(
+function createDefaultConverterManager(
   changeCase: (name: string) => string
 ): ConvertManager {
   const converter = new ConvertManager();
@@ -17,4 +17,4 @@ function defaultConverterManagerFactory(
   return converter;
 }
 
-export default defaultConverterManagerFactory;
+export default createDefaultConverterManager;
