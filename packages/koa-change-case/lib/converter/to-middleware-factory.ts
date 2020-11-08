@@ -19,8 +19,7 @@ function toMiddlewareFactory(
 
   middlewareFactory.changeCase = convertManager.changeCase;
   middlewareFactory.convert = (value: unknown) => {
-    convertManager.convert(value);
-    return middlewareFactory;
+    return convertManager.convert(value);
   };
   middlewareFactory.register = (
     converter: ConvertProcessor<unknown, unknown>,
