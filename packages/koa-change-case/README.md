@@ -7,7 +7,6 @@ import Koa from "koa";
 import { snakeCase, camelCase, requestBody, responseBody } from "koa-change-case";
 import bodyParser from "koa-bodyparser";
 
-
 const app = new Koa();
 
 app.use(bodyParser())
@@ -24,7 +23,7 @@ app.use(snakeCase(responseBody))
 ```typescript
 import { ConvertProcessor, Converter, snakeCase } from "koa-change-case";
 
-class SetConvertProcessor
+class MapConvertProcessor
   implements ConvertProcessor<Map<unknown, unknown>, Map<unknown, unknown>> {
   constructor(private readonly changeCase: (name: string) => string) {}
 
@@ -46,7 +45,7 @@ class SetConvertProcessor
   }
 }
 
-snakeCase.register(new SetConvertProcessor(snakeCase.changeCase))
+snakeCase.register(new MapConvertProcessor(snakeCase.changeCase))
 ```
   
 ### Convert other convention
