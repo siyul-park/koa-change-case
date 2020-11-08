@@ -7,7 +7,6 @@ import Koa from "koa";
 import { snakeCase, camelCase, requestBody, responseBody } from "koa-change-case";
 import bodyParser from "koa-bodyparser";
 
-
 const app = new Koa();
 
 app.use(bodyParser())
