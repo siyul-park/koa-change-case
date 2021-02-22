@@ -1,11 +1,12 @@
 import Application from "koa";
-import { Exchanger } from "../exchanger";
+import { Position } from "koa-position";
+
 import { ConvertProcessor } from "../convert-processor";
 
 interface MiddlewareFactory {
   readonly changeCase: (name: string) => string;
 
-  (exchanger: Exchanger<unknown, unknown>): Application.Middleware;
+  (position: Position): Application.Middleware;
 
   convert(value: unknown): unknown;
   register(
