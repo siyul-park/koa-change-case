@@ -1,18 +1,17 @@
 import Application from "koa";
-import ConvertProcessor from "convable/dist/convert-processor";
+import { Position } from "koa-position";
+import { ConvertProcessor } from "convable";
+
 import MiddlewareFactory from "./middleware-factory";
-import { Exchanger } from "../exchanger";
 import ConvertManager from "./convert-manager";
 
 function toMiddlewareFactory(
   convertManager: ConvertManager
 ): MiddlewareFactory {
-  const middlewareFactory = (
-    exchanger: Exchanger<unknown, unknown>
-  ): Application.Middleware => {
+  const middlewareFactory = (position: Position): Application.Middleware => {
     return async (context, next) => {
-      const origin = await exchanger.extract(context);
-      await exchanger.inject(context, convertManager.convert(origin));
+      const origin = await position.extract(context);
+      await position.inject(context, convertManager.convert(origin));
       await next();
     };
   };
