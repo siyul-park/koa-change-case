@@ -20,8 +20,7 @@ class ObjectConvertProcessor
   // eslint-disable-next-line class-methods-use-this
   isConvertible(value: unknown): boolean {
     if (typeof value !== "object") return false;
-    // eslint-disable-next-line no-prototype-builtins
-    return Object.getPrototypeOf(value).isPrototypeOf(Object);
+    return Object.getPrototypeOf(value)?.isPrototypeOf?.(Object) ?? true;
   }
 }
 
