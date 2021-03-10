@@ -1,6 +1,6 @@
 {
   "name": "koa-change-case",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Extensible Koa middleware for converting objects in context",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
