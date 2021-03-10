@@ -16,12 +16,6 @@
     "package:publish": "lerna publish",
     "package:init": "./scripts/init-package.sh"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test",
-      "pre-commit": "npm run lint:fix"
-    }
-  },
   "devDependencies": {
     "@types/jest": "^26.0.12",
     "@types/node": "^14.6.2",
@@ -35,7 +29,10 @@
     "eslint-plugin-prettier": "^3.1.4",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
-    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-if": "^3.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^5.0.1",
+    "gulp-uglify": "^3.0.2",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lerna": "^3.22.1",
