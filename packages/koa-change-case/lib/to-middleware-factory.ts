@@ -15,9 +15,6 @@ function toMiddlewareFactory(
     };
   };
 
-  middlewareFactory.convert = (value: unknown) => {
-    return convertManager.convert(value);
-  };
   middlewareFactory.register = (
     converter: ConvertProcessor<unknown, unknown>,
     priority?: number
