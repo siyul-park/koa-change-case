@@ -2,6 +2,9 @@
   "name": "koa-change-case",
   "version": "1.1.2",
   "description": "Extensible Koa middleware for converting objects in context",
+  "homepage": "https://github.com/siyual-park/koa-change-case",
+  "license": "MIT",
+  "author": "Si-Yual Park",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,32 +16,19 @@
     "lint:fix": "eslint --fix .",
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
-  "author": "Si-Yual Park",
-  "license": "MIT",
-  "homepage": "https://github.com/siyual-park/koa-change-case",
+  "dependencies": {
+    "is-plain-object": "^5.0.0",
+    "change-case": "^4.1.1",
+    "convable": "^1.0.0-beta.0"
+  },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
     "@types/koa": "^2.11.6",
-    "@types/node": "^14.14.6",
     "cross-env": "^7.0.2",
-    "eslint": "^7.12.1",
-    "gulp": "^4.0.2",
-    "gulp-if": "^3.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-typescript": "^5.0.1",
-    "gulp-uglify": "^3.0.2",
-    "jest": "^26.6.3",
     "koa": "^2.13.0",
-    "koa-position": "^1.1.0",
-    "ts-jest": "^26.4.3",
-    "typescript": "^4.0.5"
+    "koa-position": "^1.1.0"
   },
   "peerDependencies": {
     "koa": "2.x",
     "koa-position": "1.1.x"
-  },
-  "dependencies": {
-    "change-case": "^4.1.1",
-    "convable": "^1.0.0-beta.0"
   }
 }

@@ -1,8 +1,9 @@
 import { Converter, ConvertProcessor } from "convable";
+import { isPlainObject } from "is-plain-object";
 
 class ObjectConvertProcessor
-  implements
-    ConvertProcessor<Record<string, unknown>, Record<string, unknown>> {
+  implements ConvertProcessor<Record<string, unknown>, Record<string, unknown>>
+{
   constructor(private readonly changeCase: (name: string) => string) {}
 
   convert(
@@ -20,7 +21,7 @@ class ObjectConvertProcessor
   // eslint-disable-next-line class-methods-use-this
   isConvertible(value: unknown): boolean {
     if (typeof value !== "object") return false;
-    return Object.getPrototypeOf(value)?.isPrototypeOf?.(Object) ?? true;
+    return isPlainObject(value);
   }
 }
 

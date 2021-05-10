@@ -36,9 +36,6 @@ echo "✅ Finish"
 # Typescript 세팅
 sh "${scriptPath}/set-up-typescript.sh" "${rootPath}" "${packagePath}"
 
-# cross env 세팅
-sh "${scriptPath}/set-up-cross-env.sh" "${packagePath}"
-
 # gulp 세팅
 sh "${scriptPath}/set-up-gulp.sh" "${rootPath}" "${packagePath}"
 
@@ -55,6 +52,7 @@ sh "${scriptPath}/add-default-script-in-package.sh" "${templatePath}" "${package
 echo "⚙️ set up default file"
 
 cp -r "${templatePath}/lib" "${packagePath}"
+cp -r "${templatePath}/test" "${packagePath}"
 
 echo "✅ Finish"
 
@@ -74,3 +72,6 @@ git add .
 echo "✅ Finish"
 
 echo "🎉 Finish to install ${packageName} in ${packageLocation}"
+
+cd "${rootPath}" || exit
+npm run package:sort
