@@ -1,11 +1,8 @@
 import Application from "koa";
 import { Position } from "koa-position";
-
-import { ConvertProcessor } from "../convert-processor";
+import { ConvertProcessor } from "convable";
 
 interface MiddlewareFactory {
-  readonly changeCase: (name: string) => string;
-
   (position: Position): Application.Middleware;
 
   convert(value: unknown): unknown;

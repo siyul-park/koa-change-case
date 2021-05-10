@@ -1,5 +1,3 @@
-import createDefaultConverterManager from "./create-default-converter-manager";
-import toMiddlewareFactory from "./to-middleware-factory";
 import {
   toCamelCase,
   toCapitalCase,
@@ -12,7 +10,9 @@ import {
   toPathCase,
   toSentenceCase,
   toSnakeCase,
-} from "../change-case";
+  createDefaultConverterManager,
+} from "object-change-case";
+import toMiddlewareFactory from "./to-middleware-factory";
 
 export const camelCase = toMiddlewareFactory(
   createDefaultConverterManager(toCamelCase)
