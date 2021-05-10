@@ -17,9 +17,8 @@
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "dependencies": {
-    "is-plain-object": "^5.0.0",
-    "change-case": "^4.1.1",
-    "convable": "^1.0.0-beta.0"
+    "convable": "^1.0.0-beta.0",
+    "object-change-case": "^0.0.0"
   },
   "devDependencies": {
     "@types/koa": "^2.11.6",

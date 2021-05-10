@@ -1,9 +1,8 @@
 import Application from "koa";
 import { Position } from "koa-position";
-import { ConvertProcessor } from "convable";
+import { ConvertManager, ConvertProcessor } from "convable";
 
 import MiddlewareFactory from "./middleware-factory";
-import ConvertManager from "./convert-manager";
 
 function toMiddlewareFactory(
   convertManager: ConvertManager
@@ -16,10 +15,6 @@ function toMiddlewareFactory(
     };
   };
 
-  middlewareFactory.changeCase = convertManager.changeCase;
-  middlewareFactory.convert = (value: unknown) => {
-    return convertManager.convert(value);
-  };
   middlewareFactory.register = (
     converter: ConvertProcessor<unknown, unknown>,
     priority?: number
