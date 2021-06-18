@@ -13,9 +13,9 @@ function toMiddlewareFactory(
     position: Position,
     options?: MiddlewareFactoryOptions
   ): Application.Middleware => {
-    return async (context, next) => {
-      const guard = options?.guard;
+    const guard = options?.guard;
 
+    return async (context, next) => {
       if (guard == null || (await guard(context))) {
         const origin = await position.extract(context);
         await position.inject(context, convertManager.convert(origin));
