@@ -9,8 +9,10 @@ function toMiddlewareFactory(
 ): MiddlewareFactory {
   const middlewareFactory = (position: Position): Application.Middleware => {
     return async (context, next) => {
-      const origin = await position.extract(context);
-      await position.inject(context, convertManager.convert(origin));
+      if (context.type === "application/json") {
+        const origin = await position.extract(context);
+        await position.inject(context, convertManager.convert(origin));
+      }
       await next();
     };
   };
