@@ -2,17 +2,25 @@ import Application from "koa";
 import { Position } from "koa-position";
 import { ConvertManager, ConvertProcessor } from "convable";
 
-import MiddlewareFactory from "./middleware-factory";
+import MiddlewareFactory, {
+  MiddlewareFactoryOptions,
+} from "./middleware-factory";
 
 function toMiddlewareFactory(
   convertManager: ConvertManager
 ): MiddlewareFactory {
-  const middlewareFactory = (position: Position): Application.Middleware => {
+  const middlewareFactory = (
+    position: Position,
+    options?: MiddlewareFactoryOptions
+  ): Application.Middleware => {
     return async (context, next) => {
-      if (context.type === "application/json") {
+      const guard = options?.guard;
+
+      if (guard == null || (await guard(context))) {
         const origin = await position.extract(context);
         await position.inject(context, convertManager.convert(origin));
       }
+
       await next();
     };
   };
