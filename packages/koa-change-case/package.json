@@ -24,10 +24,10 @@
     "@types/koa": "^2.11.6",
     "cross-env": "^7.0.2",
     "koa": "^2.13.0",
-    "koa-position": "^1.1.0"
+    "koa-position": "^1.2.0"
   },
   "peerDependencies": {
-    "koa": "2.x",
-    "koa-position": "1.1.x"
+    "koa": "^2.13.0",
+    "koa-position": "^1.2.0"
   }
 }
