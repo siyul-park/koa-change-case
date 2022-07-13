@@ -21,13 +21,13 @@
     "object-change-case": "^1.0.0"
   },
   "devDependencies": {
-    "@types/koa": "^2.11.6",
-    "cross-env": "^7.0.2",
-    "koa": "^2.13.0",
+    "@types/koa": "^2.13.5",
+    "cross-env": "^7.0.3",
+    "koa": "^2.13.4",
     "koa-position": "^1.2.0"
   },
   "peerDependencies": {
-    "koa": "^2.13.0",
+    "koa": "^2.13.4",
     "koa-position": "^1.2.0"
   }
 }

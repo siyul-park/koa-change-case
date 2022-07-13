@@ -10,7 +10,7 @@ class ArrayConvertProcessor
 
   // eslint-disable-next-line class-methods-use-this
   isConvertible(value: unknown): boolean {
-    return value instanceof Array;
+    return Array.isArray(value);
   }
 }
 
