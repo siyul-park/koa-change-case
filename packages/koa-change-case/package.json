@@ -1,6 +1,6 @@
 {
   "name": "koa-change-case",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Extensible Koa middleware for converting objects in context",
   "homepage": "https://github.com/siyual-park/koa-change-case",
   "license": "MIT",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "convable": "^1.0.0-beta.0",
-    "object-change-case": "^1.0.0"
+    "object-change-case": "^1.0.1"
   },
   "devDependencies": {
     "@types/koa": "^2.13.5",
